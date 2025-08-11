@@ -1,8 +1,10 @@
 "use client";
-
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState, useMemo } from "react";
 import { products, Product } from "../../data/products";
 import Link from "next/link";
+import Image from "next/image";
+<Image src="/path/to/img.jpg" alt="desc" width={500} height={500} />;
 
 export default function SearchPage() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -162,7 +164,7 @@ export default function SearchPage() {
             {filteredProducts.map((product) => (
               <Link key={product.id} href={`/product/${product.id}`}>
                 <div className="bg-[#232336] rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer">
-                  <img
+                  <Image
                     src={product.image}
                     alt={product.name}
                     className="w-full h-48 object-cover"
